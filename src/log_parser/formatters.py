@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from .parser import LogEntry, LogLevel
+from .parser import LogEntry
 from .patterns import PatternMatch
 
 
@@ -65,7 +65,7 @@ def format_summary(entries: list[LogEntry]) -> str:
         time_range = f"\nTime range: {earliest.isoformat()} to {latest.isoformat()}"
 
     lines = [
-        f"Log Summary",
+        "Log Summary",
         f"{'=' * 40}",
         f"Total entries: {total}",
     ]

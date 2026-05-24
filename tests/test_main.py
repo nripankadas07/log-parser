@@ -3,13 +3,12 @@
 from __future__ import annotations
 
 import json
-import tempfile
 from datetime import datetime
 from pathlib import Path
 
 import pytest
 
-from log_parser.parser import LogEntry, LogFormat, LogLevel, LogParser, parse_timestamp
+from log_parser.parser import LogEntry, LogLevel, LogParser, parse_timestamp
 from log_parser.patterns import PatternDetector, PatternMatch
 from log_parser.formatters import (
     format_entry_json,
@@ -147,7 +146,7 @@ class TestParser:
 
     def test_parse_empty_lines(self) -> None:
         parser = LogParser()
-        entries = parser.parse_lines(["", "  ", COMMON_LOG_LINES[0]])
+        parser.parse_lines(["", "  ", COMMON_LOG_LINES[0]])
         assert parser.stats["failed"] == 2
         assert parser.stats["parsed"] == 1
 
@@ -213,7 +212,7 @@ class TestPatternDetector:
                 LogEntry(
                     raw=f"line {i}",
                     level=LogLevel.ERROR,
-                    message=f"Connection refused on port 8080",
+                    message="Connection refused on port 8080",
                     line_number=i + 1,
                 )
             )
