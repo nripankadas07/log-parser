@@ -1,7 +1,5 @@
 # log-parser
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests: Passing](https://img.shields.io/badge/Tests-Passing-green.svg)]()
 
 Universal log parser with pattern detection. Feed it any log file and get structured output, level filtering, and automatic anomaly detection â no format configuration needed.
 
